@@ -61,6 +61,50 @@ public final class Main extends JavaPlugin {
                     }
                     break;
                 }
+                case (2):
+                {
+                    switch (args[0])
+                    {
+                        case ("get"):
+                        {
+                            player.sendMessage(ChatColor.RED + "Code to get a player's race goes here!!!");
+                            break;
+                        }
+                        case ("set"):
+                        {
+                            player.sendMessage(ChatColor.RED + "Usage: /race set " + args[1] + " [race]");
+                            break;
+                        }
+                        default:
+                        {
+                            player.sendMessage(ChatColor.RED + "Usage: /race {get/set/list}");
+                            break;
+                        }
+                    }
+                    break;
+                }
+                case (3):
+                {
+                    switch (args[0])
+                    {
+                        case ("set"):
+                        {
+                            player.sendMessage(ChatColor.RED + "Code to set a player's race goes here!!!");
+                            break;
+                        }
+                        default:
+                        {
+                            player.sendMessage(ChatColor.RED + "Usage: /race {get/set/list}");
+                            break;
+                        }
+                    }
+                    break;
+                }
+                default:
+                {
+                    player.sendMessage(ChatColor.RED + "Usage: /race {get/set/list}");
+                    break;
+                }
             }
         }
         return false;
