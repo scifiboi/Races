@@ -1,0 +1,6 @@
+name: Race
+version: 1.6.4-0.0.1
+main: com.plugin.test.Main
+commands:
+  race:
+    description: Base command for the Race plugin
