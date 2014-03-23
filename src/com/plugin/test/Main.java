@@ -1,17 +1,31 @@
 package com.plugin.test;
-     
+
+import java.io.File;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
      
 public final class Main extends JavaPlugin {
-
+    FileConfiguration config;
+    File Races = new File ("plugins" + File.separator + "Races" + File.separator + "config.yml");
     @Override
     public void onEnable(){
         getLogger().info("Disabled!");
-    }
+        FileConfiguration config;
  
+        if(!new File(getDataFolder(), "config.yml").exists()){
+            // saveResource(String filePath, boolean replaceIfExists)
+            saveResource("config.yml", false);
+            getLogger().info("Generating a new config for you.");
+    }
+        else{
+            config = getConfig();
+            getLogger().info("Config found. Using it.");
+    }
+    }
+    
     @Override
     public void onDisable(){
         getLogger().info("Enabled!");
